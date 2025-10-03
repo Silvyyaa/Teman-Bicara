@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuesioner Teman Bicara</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+    .question {
+      display: none;
+    }
+    .question.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .answers button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      width: 80%;
+      transition: 0.2s;
+    }
+    .answers button:hover {
+      background: #0056b3;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 id="title">Kuesioner Teman Bicara</h2>
+
+  <!-- Soal 1 -->
+  <div class="question active">
+    <p>1. Saya mengalami kesulitan tidur atau terlalu banyak tidur.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(0, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(0, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(0, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(0, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 2 -->
+  <div class="question">
+    <p>2. Saya sering merasa lelah di siang hari.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(1, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(1, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(1, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(1, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 3 -->
+  <div class="question">
+    <p>3. Saya sulit berkonsentrasi saat belajar/kampus.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(2, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(2, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(2, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(2, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 4 -->
+  <div class="question">
+    <p>4. Saya sering merasa cemas tanpa alasan jelas.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(3, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(3, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(3, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(3, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 5 -->
+  <div class="question">
+    <p>5. Saya sering kehilangan minat terhadap kegiatan sehari-hari.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(4, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(4, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(4, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(4, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 6 -->
+  <div class="question">
+    <p>6. Saya mudah tersinggung/emosional.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(5, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(5, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(5, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(5, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 7 -->
+  <div class="question">
+    <p>7. Saya merasa kesepian meskipun bersama orang lain.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(6, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(6, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(6, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(6, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 8 -->
+  <div class="question">
+    <p>8. Saya sering merasa tidak berharga.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(7, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(7, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(7, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(7, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 9 -->
+  <div class="question">
+    <p>9. Saya sering merasa gugup ketika berbicara di depan umum.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(8, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(8, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(8, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(8, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Soal 10 -->
+  <div class="question">
+    <p>10. Saya sering merasa terbebani oleh masalah kecil.</p>
+    <div class="answers">
+      <button onclick="nextQuestion(9, 'Pernah')">Pernah</button>
+      <button onclick="nextQuestion(9, 'Tidak Pernah')">Tidak Pernah</button>
+      <button onclick="nextQuestion(9, 'Pernah Satu Kali')">Pernah Satu Kali</button>
+      <button onclick="nextQuestion(9, 'Sangat Pernah')">Sangat Pernah</button>
+    </div>
+  </div>
+
+  <!-- Hasil akhir -->
+  <div class="question" id="finish">
+    <h3>Terima kasih telah mengisi kuesioner 🙏</h3>
+    <p>Jawaban Anda sudah tersimpan.</p>
+  </div>
+
+</div>
+
+<script>
+  let answers = [];
+
+  function nextQuestion(index, answer) {
+    answers[index] = answer;
+
+    let questions = document.querySelectorAll('.question');
+    questions[index].classList.remove('active');
+
+    if (index + 1 < questions.length) {
+      questions[index + 1].classList.add('active');
+    } else {
+      document.getElementById("finish").classList.add("active");
+
+      // Kirim ke Google Spreadsheet
+      fetch("PASTE_URL_APPS_SCRIPT_DI_SINI", {
+        method: "POST",
+        body: JSON.stringify({answers: answers})
+      })
+      .then(res => res.text())
+      .then(data => console.log("Server:", data))
+      .catch(err => console.error(err));
+    }
+  }
+</script>
+
+</body>
+</html>
